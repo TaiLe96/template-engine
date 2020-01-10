@@ -1,12 +1,14 @@
 const inquirer = require("inquirer");
 const render = require()
 
-const manager = require();
+const manager = require('./html/');
 const engineer = require();
 const intern = require();
 
+// Make an empty array
+const teamMembers = [];
+
 // Function to create Manager
-// Prompt
 function createManager() {
     inquirer
     .prompt([
@@ -43,6 +45,7 @@ function createManager() {
         addMember();
     });
 }
+createManager();
 
 // Function to add members
 function addMember() {
@@ -71,7 +74,8 @@ function addMember() {
     })
 }
 
-function addEngineer() {
+// Engineer
+function createEngineer() {
     inquirer
     .prompt([
         {
@@ -107,6 +111,7 @@ function addEngineer() {
     })
 }
 
+// Intern
 function createIntern() {
     inquirer
     .prompt([
@@ -137,6 +142,8 @@ function createIntern() {
             praseInt(input.id),
             input.email,
             input.school,
-        )
+        );
+        teamMembers.push(intern);
+        addMember();
     })
 }
