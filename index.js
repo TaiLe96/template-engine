@@ -1,9 +1,9 @@
 const inquirer = require("inquirer");
 const render = require()
 
-const manager = require('./html/');
-const engineer = require();
-const intern = require();
+const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
 
 // Make an empty array
 const teamMembers = [];
@@ -35,7 +35,7 @@ function createManager() {
     ])
     // Function to push manager's data
     .then(function(input){
-        const manager = new manager(
+        const manager = new Manager(
             input.name,
             parseInt(input.id),
             input.email,
@@ -69,7 +69,7 @@ function addMember() {
         } else if (input.type === "Intern") {
             createIntern();
         } else {
-            render
+            render(teamMembers);
         }
     })
 }
@@ -100,7 +100,7 @@ function createEngineer() {
         }
     ])
     .then(function(input){
-        const engineer = new engineer(
+        const engineer = new Engineer(
             input.name,
             parseInt(input.id),
             input.email,
@@ -137,7 +137,7 @@ function createIntern() {
         },
     ])
     .then(function(input){
-        const intern = new intern(
+        const intern = new Intern(
             input.name,
             praseInt(input.id),
             input.email,
