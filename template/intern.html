@@ -2,18 +2,18 @@
     <div class="card-body m-0 p-0">
         <div class="bg-primary m-0 p-2 text-light">
             <h5 class="card-title">{{ name }}</h5>
-            <h5 class="card-subtitle mb-2"><i class="fas fa-glasses"></i> Intern</h5>
+            <h5 class="card-subtitle mb-2"><i class="fas fa-user-graduate"></i> Intern</h5>
         </div>
         <div class="p-3 bg-light">
             <ul class="list-group">
                 <li class="list-group-item">
-                    ID:
+                    ID: {{ id }}
                 </li>
                 <li class="list-group-item">
-                    Email: <a href="{{ email }}"></a>
+                    Email: <a href="{{ email }}">{{ email }}</a>
                 </li>
                 <li class="list-group-item">
-                    School:
+                    School: {{ school }}
                 </li>
             </ul>
         </div>
